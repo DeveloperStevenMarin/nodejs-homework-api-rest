@@ -2,10 +2,11 @@ const express = require("express");
 const router = express.Router();
 const Joi = require("joi");
 const mongoose = require("mongoose");
+require('dotenv').config(); // Carga las variables de entorno desde .env
 
 mongoose
   .connect(
-    "mongodb+srv://developerstevenmarin:%40Mongo2023@nodejs-homework-api-res.3fnzywr.mongodb.net/db-contacts",
+    process.env.DB_URI,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
